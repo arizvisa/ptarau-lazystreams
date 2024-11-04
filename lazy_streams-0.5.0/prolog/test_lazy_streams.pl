@@ -12,7 +12,7 @@
 
 %c:-make.
 
-%! TESTS AND BENCHMARKS: 
+% TESTS AND BENCHMARKS:
 % run with: ?-mytests. and ?-bm.
 
 t1:-nat(N),list([10,20,30],M),map(plus,N,M,R),show(R).

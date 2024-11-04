@@ -1,5 +1,4 @@
-/**
-<module> Lazy Stream Generators of finite or infinite sequences and their operations.
+/* <module> Lazy Stream Generators of finite or infinite sequences and their operations.
 
 Lazy stream generators provide a unified interface to, stateful computations, I/O operations as well as algorithms producing finite or infinite sequences and answers of first class Prolog engines. We expose them to the application programmer either as lazy lists or through an abstract sequence manipulation API.
 
@@ -169,7 +168,7 @@ const(C,=(C)).
 rand(random()).
 
 
-%! gen_next(+Advancer,InitialState+,-AnswerTemplate)
+%! gen_next(+Advancer,+InitialState,-AnswerTemplate)
 %
 % generic simple stream advancer
 gen_next(F,State,X):-
@@ -273,14 +272,14 @@ ceng(X,G,ask_generator(Gen)):-new_generator(X,G,Gen).
 
 %! ceng_clone(+Generator, -Clone)
 % creates new generator from a generator's goal
-ceng_clone(ask_generator(engine(_E,X,G)),NewGen):-ceng(X,G,NewGen).
+ceng_clone(ask_generator(engine(_,X,G)),NewGen):-ceng(X,G,NewGen).
 
 %! new_generator(+AnswerTemplate,+Goal, -Generator)
 %
 % Creates a new generator, made of an engine and a goal for possible cloning.
 new_generator(X,G,engine(E,X,G)):-engine_create(X,G,E).
 
-%! ask_generator(Generator+, -Yield)
+%! ask_generator(+Generator, -Yield)
 %
 % Extracts next answer from generator wrapping an engine.
 ask_generator(G,X):-arg(1,G,E),engine_next(E,X).

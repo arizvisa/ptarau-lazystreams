@@ -9,7 +9,7 @@
   array_size/2
 ]).
 
-/** 
+/** <module> Dynamic stateful arrays
 * Dynamic stateful arrays in Prolog - extend and shrink as needed.
 * Updates persist on backtracking.
 */
