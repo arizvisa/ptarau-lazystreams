@@ -165,7 +165,7 @@ const(C,=(C)).
 %! rand(+RandomStreamGenerator)
 %
 % produces a stream of random floating point numbers between 0 and 1
-rand(random()).
+rand(Float) :- Float is random_float.
 
 
 %! gen_next(+Advancer,+InitialState,-AnswerTemplate)
